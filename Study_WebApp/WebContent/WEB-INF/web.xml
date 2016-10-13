@@ -4,4 +4,15 @@
   <welcome-file-list>
     <welcome-file>NewFile.html</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>MyServlet</servlet-name>
+  	<servlet-class>ua.kas.Servlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>MyServlet</servlet-name>
+  	<url-pattern>/Servlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
