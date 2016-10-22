@@ -5,7 +5,7 @@
 <title>Hello world!</title>
 </head>
 <body>
-	<form method="post" action = "Servlet">
+	<form method="get" action = "Servlet">
 		<table>
 			<tr>
 				<td>Name:</td>
@@ -14,6 +14,35 @@
 			<tr>
 				<td>Surname:</td>
 				<td><input type = "text" name = "secondName"></td>		
+			</tr>
+			<tr>
+				<td>
+					Work
+				</td>
+				<td>
+					<select name = "job" multiple size="4">
+						<option value = "Developer">Developer</option>
+						<option selected value = "Tester">Tester</option>
+						<option value = "Analyst">Analyst</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Gender
+				</td>
+				<td>
+					<input type = "radio" name = "gender" value="M">Man<br>
+					<input type="radio" name="gender" value="F">Woman
+				</td>
+			</tr>
+			<tr>
+				<td>
+					You have 18 years old?
+				</td>
+				<td>
+					<input type="checkbox" name="age18" value="yes">Yes<br>
+				</td>
 			</tr>
 			<tr>
 				<td align="right" colspan="2"><input type = "submit" value = "Sent"></td>

@@ -2,6 +2,7 @@ package ua.kas;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +19,16 @@ public class Servlet extends HttpServlet {
 
 		String name = request.getParameter("firstName");
 		String surname = request.getParameter("secondName");
+		// String job = request.getParameter("job");
+		String[] jobs = request.getParameterValues("job");
+		String gender = request.getParameter("gender");
+		if (gender == null) {
+			gender = "-";
+		}
+		String age18 = request.getParameter("age18");
+		if (age18 == null) {
+			age18 = "no";
+		}
 
 		// response.setContentType("text/html");
 		// response.setCharacterEncoding("UTF-8");
@@ -26,7 +37,13 @@ public class Servlet extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 
 		PrintWriter out = response.getWriter();
-		out.print("<h3>Hello from get" + " " + name + " " + surname + "</h3><br>Привіт!");
+		out.print("<h3>Profile</h3>");
+		out.print("Name: " + name + "<br>");
+		out.print("Surname: " + surname + "<br>");
+		// out.print("Job: " + job + "<br>");
+		out.print("Job: " + Arrays.deepToString(jobs) + "<br>");
+		out.print("Gender: " + gender + "<br>");
+		out.print("Age 18: " + age18 + "<br>");
 		out.close();
 	}
 
